@@ -1,0 +1,30 @@
+#root{
+    background-color: rgb(29, 1, 71);
+    color: aliceblue;
+}
+
+.custom-input{
+    width: 25px;
+}
+
+.form-column{
+    padding: 50px;
+    background-color: rgb(84, 0, 136);
+    box-shadow: rgb(71, 105, 143) 0px 20px 30px -10px;
+    border-radius: 5px;
+}
+
+.viewPort{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.heading{
+    height: 35%;
+}
+
+.lobby-dialog{
+    flex-grow: 1;
+}
+
