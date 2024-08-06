@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {socket} from '../Context/Socket'
-
+import { io } from 'socket.io-client'
 const Lobby = () => {
 
   const [name, changeName] = useState("");
@@ -19,6 +18,8 @@ const Lobby = () => {
   const handleSubmit = (event)=>{
       event.preventDefault();
       setLoading(true);
+
+      const socket = io('https://localhost:3000');
   }
 
   return (
