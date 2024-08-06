@@ -3,12 +3,12 @@ import Lobby from './Components/Lobby'
 import { Routes, Route } from 'react-router-dom'
 
 
-function App() {
+function App(props) {
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Lobby/>}/>
+        <Route path='/' element={<Lobby socket = {props.socket} />}/>
       </Routes>
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { io } from 'socket.io-client'
-const Lobby = () => {
+import { useState, useEffect } from 'react';
+
+const Lobby = (props) => {
 
   const [name, changeName] = useState("");
   const [roomName, changeRoom] = useState("");
@@ -19,8 +19,15 @@ const Lobby = () => {
       event.preventDefault();
       setLoading(true);
 
-      const socket = io('https://localhost:3000');
+      //emit the message to the server from client
+      props.socket.emit("send_data", name)
   }
+
+  useEffect(()=>{
+    props.socket.on("receive_data", (data)=>{
+      alert(data);
+    })
+  }, [props.socket])
 
   return (
     <>
